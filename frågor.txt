@@ -28,4 +28,13 @@ branchen.
 VG delen.
 Om man vill rulla tillbaka koden till ett tidigare tillstånd kan man använda restore, reset eller revert.
 Med restore kan du flytta HEAD pekaren till en tidigare valfri commit och arbetskatalogen ändras då till den 
-commitens tillstånd. 
+commitens tillstånd. Med git reset kan du skicka med argument, soft, mixed och hard. med git reset --soft HEAD~1
+så flyttar du head pekaren en commit bakåt men du behåller ändringar i både arbetskatalogen och staging area.
+Med git reset --mixed HEAD~1 så flyttar du också head pekaren en commit bakåt, ändringarna finns kvar i 
+arbetskatalogen men dem blir unstaged så dem måste addas igen innan man kan göra en ny commit. Mixed är 
+standardläget på reset. git reset --hard HEAD~1 backar en commit och ändringar i commit historiken i staging 
+area och arbetskatalogen försvinner permanent, bör användas med försiktighet. Med git revert gör du en ny commit 
+som går tillbaka till en tidigare commit, men den sparar historiken d.v.s. de commits som ligger mellan den nya 
+commiten och den commit man ville reverta till. Revert är bra när man gör ändring på en publik branch så att alla 
+tidigare ändringar finns kvar i historiken. Reset och restore är bra när man gör lokala ändringar på en branch.
+

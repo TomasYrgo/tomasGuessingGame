@@ -38,3 +38,34 @@ som går tillbaka till en tidigare commit, men den sparar historiken d.v.s. de c
 commiten och den commit man ville reverta till. Revert är bra när man gör ändring på en publik branch så att alla 
 tidigare ändringar finns kvar i historiken. Reset och restore är bra när man gör lokala ändringar på en branch.
 
+Visar här nedan vad jag gjort när jag testade lite. Jag skapade en ny branch och gjorde 2 nya commits, 
+”explaining restore” och ”explaining reset and revert”
+
+tomas@Minkur:/mnt/c/yrgo/utvecklingsverktyg/guessingGame$ git log --oneline
+48f2c39 (HEAD -> vgbranch) explaining reset and revert
+d87f8e2 explaining restore
+9e274f7 answearing question sheet
+
+Kör sedan git revert HEAD och då försvinner texten i frågor.txt som jag skrivit om reset och revert.
+
+ git revert HEAD
+[vgbranch a1dc015] Revert "explaining reset and revert, misstakes in the text"
+ 1 file changed, 1 insertion(+), 10 deletions(-)
+
+tomas@Minkur:/mnt/c/yrgo/utvecklingsverktyg/guessingGame$ git log --oneline
+a1dc015 (HEAD -> vgbranch) Revert "explaining reset and revert, misstakes in the text"
+48f2c39 explaining reset and revert
+d87f8e2 explaining restore
+
+Vill nu ha tillbaka texten för jag kom på att den var korrekt i alla fall och kör då git reset –hard HEAD~1
+
+tomas@Minkur:/mnt/c/yrgo/utvecklingsverktyg/guessingGame$ git reset --hard HEAD~1
+HEAD is now at 48f2c39 explaining reset and revert
+
+tomas@Minkur:/mnt/c/yrgo/utvecklingsverktyg/guessingGame$ git log --oneline
+48f2c39 (HEAD -> vgbranch) explaining reset and revert
+d87f8e2 explaining restore
+9e274f7 answearing question sheet
+
+Nu är texten som tidigare var borta tillbaka igen. Och branchen är nu redo för en merge till master/main 
+branchen och sedan git push upp till det publika repositoryt.

@@ -10,6 +10,6 @@ echo "Running..."
 java GuessingGame
 echo "Done"
 echo "Removing class files..."
-rm *.java
+rm *.class
 ls
 

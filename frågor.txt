@@ -25,4 +25,7 @@ en annan funktion samtidigt så kan dem skapa en egen branch. Det gör så att f
 samtidigt utan att det blir problem. När man är färdig med sin branch så kan man göra en merge med master/main 
 branchen.
 
-5. 
+VG delen.
+Om man vill rulla tillbaka koden till ett tidigare tillstånd kan man använda restore, reset eller revert.
+Med restore kan du flytta HEAD pekaren till en tidigare valfri commit och arbetskatalogen ändras då till den 
+commitens tillstånd. 

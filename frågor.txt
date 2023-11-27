@@ -1,0 +1,28 @@
+Jag siktar på vg!
+
+1. När använder man add respektive commit?
+Add är för att lägga till filerna som man ändrat i till staging area, alltså man signalerar att dessa
+ändringar ska vara med i nästa commit.
+
+Commit innebär att man markerar att man gjort en förändring med de ändringar man signalerat som skall ingå
+i nästa commit. D.v.s. det som ligger i staging area. Med hjälp av flaggan -m lägger man till ett meddelande 
+på commiten så man vet vad förändring gör, bra att ha ifall man behöver gå tillbaka.
+
+2. Vad är pull repektive push?
+Med pull laddar man ner dem commit som man inte redan har laddat ner från remote repository..
+
+Med push laddar man upp sina ändring till remote repository så andra utvecklar kan se vad man gjort.
+
+3. När använder man log respektive status?
+Med log ser man commits som är gjorda i den branchen man befinner sig i, så det är som en historik över 
+tidigare commits, där kan man även se tillhörande meddelande så man vet vad som ändrades vid varje commit.
+
+Med status får man reda på vilken branch man är i och om det finns någon fil som är redo för add eller commit.
+
+4. Vad är en Git branch och varför är de viktiga?
+Man kan skapa en branch om man t.ex. arbetar med en ny funktion i programmet, sen kanske någon annan ska göra 
+en annan funktion samtidigt så kan dem skapa en egen branch. Det gör så att flera kan jobba med samma projekt 
+samtidigt utan att det blir problem. När man är färdig med sin branch så kan man göra en merge med master/main 
+branchen.
+
+5. 
